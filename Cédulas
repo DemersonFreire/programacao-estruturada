@@ -1,0 +1,86 @@
+// Example program
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int val = 0;
+int quantNota100 = 0;
+int quantNota50 = 0;
+int quantNota20 = 0;
+int quantNota10 = 0;
+int quantNota5 = 0;
+int quantNota2 = 0;
+int quantNota1 = 0;
+
+int input();
+void process();
+void output();
+
+int main() {
+    input();
+    process();
+    output();
+    return(0);
+}
+//Entrada de dados
+int input() {
+    cin >> val;
+    return(val);
+}
+//Processamento de dados
+void process() {
+
+    if (val > 0 && val < 1000000)
+    {
+        cout << val << endl;
+        while (val > 0)
+        {
+            if (val - 100 >= 0)
+            {
+                val -= 100;
+                quantNota100++;              
+            }
+            else if (val - 50 >= 0)
+            {
+                val -= 50;
+                quantNota50++;
+            }
+            else if (val - 20 >= 0)
+            {
+                val -= 20;
+                quantNota20++;              
+            }
+            else if (val - 10 >= 0)
+            {
+                val -= 10;
+                quantNota10++;              
+            }
+            else if (val - 5 >= 0)
+            {
+                val -= 5;
+                quantNota5++;              
+            }
+            else if (val - 2 >= 0)
+            {
+                val -= 2;
+                quantNota2++;
+            }
+            else
+            {
+                val -= 1;
+                quantNota1++;
+            }
+        }
+    }
+}
+//Entrada de dados
+void output() {
+        cout << std::to_string(quantNota100) + " nota(s) de R$ 100,00" << endl;
+        cout << std::to_string(quantNota50) + " nota(s) de R$ 50,00" << endl;
+        cout << std::to_string(quantNota20) + " nota(s) de R$ 20,00" << endl;
+        cout << std::to_string(quantNota10) + " nota(s) de R$ 10,00" << endl;
+        cout << std::to_string(quantNota5) + " nota(s) de R$ 5,00" << endl;
+        cout << std::to_string(quantNota2) + " nota(s) de R$ 2,00" << endl;
+        cout << std::to_string(quantNota1) + " nota(s) de R$ 1,00" << endl;
+    }
