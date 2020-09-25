@@ -1,0 +1,47 @@
+#include <iostream>
+
+using namespace std;
+
+int i, j, aux, ordcre[3], n[3];
+
+void input();
+void process();
+void output();
+
+int main() {
+    input();
+    process();
+    output();
+
+    return(0);
+}
+//Entrada de dados
+void input() {
+    for (i = 0; i < 3; i++) {
+        cin >> n[i];
+        ordcre[i] = n[i];
+        
+    }
+}
+//Processamento de dados
+void process() {
+    for (i = 0; i < 3; i++) {
+        for (j = i + 1; j < 3; j++) {
+            if (ordcre[i] > ordcre[j]) {
+                aux = ordcre[i];
+                ordcre[i] = ordcre[j];
+                ordcre[j] = aux;
+             
+            }
+        }
+
+    }
+}
+//Saída de dados
+void output(){
+    for (i = 0; i < 3; i++)
+        cout << ordcre[i] << "\n";
+    for (i = 0; i < 3; i++)
+        cout << "\n" << n[i];
+    cout << endl;
+}
